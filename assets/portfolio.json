@@ -1,0 +1,66 @@
+[
+  {
+    "thumbs": "assets/portfolios/evrika.com/Screenshot 2024-10-11.png",
+    "title": "evrika.com",
+    "url": "https://evrika.com/",
+    "desc": "Online store of household appliances and electronics in Kazakhstan | Evrika",
+    "items": [
+      "assets/portfolios/evrika.com/Screenshot 2024-10-11.png",
+      "assets/portfolios/evrika.com/scrnli_06ANFcsfkFZm5D.png",
+      "assets/portfolios/evrika.com/scrnli_06ANFcsfkFZm5D.png"
+    ]
+  },
+  {
+    "thumbs": "assets/portfolios/rebyata-molotki.ru/Screenshot 2024-10-11.png",
+    "title": "rebyata-molotki.ru",
+    "desc": "rebyata-molotki.ru - Online store of construction tools and equipment",
+    "url": "https://rebyata-molotki.ru",
+    "items": [
+        "assets/portfolios/rebyata-molotki.ru/Screenshot 2024-10-11.png",
+        "assets/portfolios/rebyata-molotki.ru/scrnli_1xzqY574BfSuUf.png",
+        "assets/portfolios/rebyata-molotki.ru/scrnli_1xzqY574BfSuUf.png"
+    ]
+  },
+  {
+    "thumbs": "assets/portfolios/kistochki.ru/screenshot 2024-10-11.png",
+    "title": "kistochki.ru",
+    "desc": "Manicure salon in St. Petersburg - \"Brushes\" | Manicure and pedicure studio nearby",
+    "url": "https://kistochki.ru",
+    "items": [
+      "assets/portfolios/kistochki.ru/screenshot 2024-10-11.png",
+      "assets/portfolios/kistochki.ru/scrnli_TJuY69d6TG1ZBg.png",
+      "assets/portfolios/kistochki.ru/scrnli_VWROVQumBG44oK.png"
+    ]
+  },
+  {
+    "thumbs": "assets/portfolios/ps.1company.kz/Screenshot 2024-10-11.png",
+    "title": "ps.1company.kz",
+    "desc": "sale of real estate and archival analysis of real estate objects in Kazakhstan | 1company",
+    "url": "https://ps.1company.kz",
+    "items": [
+      "assets/portfolios/ps.1company.kz/Screenshot 2024-10-11.png",
+      "assets/portfolios/ps.1company.kz/scrnli_KPZz2Oiv0FN7PG.png",
+      "assets/portfolios/ps.1company.kz/scrnli_KPZz2Oiv0FN7PG.png"
+    ]
+  },
+  {
+    "thumbs": "assets/portfolios/baibusiness/Screenshot 2024-10-10.png",
+    "title": "baibusiness telegram bot",
+    "desc": "Telegram bot for business automation",
+    "url": "https://t.me/baibusiness_bot",
+    "items": [
+      "assets/portfolios/baibusiness/Screenshot 2024-10-10.png",
+      "assets/portfolios/baibusiness/scrnli_1xzqY574BfSuUf.png",
+      "assets/portfolios/baibusiness/scrnli_1xzqY574BfSuUf.png"
+    ]
+  },
+  {
+    "thumbs": "assets/portfolios/sonycenter.kz/Screenshot 2024-10-12.png",
+    "title": "sonycenter.kz",
+    "desc": "Sony Center - official online store of Sony products in Kazakhstan",
+    "url": "https://sonycenter.kz",
+    "items": [
+      "assets/portfolios/sonycenter.kz/Screenshot 2024-10-11.png"
+    ]
+  }
+]

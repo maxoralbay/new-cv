@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+
+    <!-- MDBootstrap CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.0.0/mdb.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/main.css">
+</head>
+<body>
+
+<!-- Header Section -->
+<section class="hero text-center py-5 bg-light">
+    <h1>Welcome to my Portfolio</h1>
+    <a href="index.html" class="btn btn-primary">English</a>
+    <a href="index_rus.html" class="btn btn-primary">Русский</a>
+</section>
+
+<!-- Profile Section -->
+<section class="container mt-5">
+    <div class="row">
+        <div class="col-md-4">
+            <img src="https://avatars.githubusercontent.com/u/59061447?v=4" class="img-fluid rounded-circle" alt="Max Oralbay">
+            <h2 class="mt-2">Contacts and CV</h2>
+            <p><a href="https://raw.githubusercontent.com/maxoralbay/cv/main/Maxat_Oralbayev_CV__2024.pdf" target="_blank">Download CV</a></p>
+            <p><a href="tel:+77073935580">Tel: +77073933580</a></p>
+            <p><a href="mailto:code.datum@gmail.com">Mail: code.datum@gmail.com</a></p>
+            <p><a href="https://t.me/r00tpy" target="blank">Telegram: @r00tpy</a></p>
+            <p><a href="https://www.linkedin.com/in/maxoralbay">Linkedin</a></p>
+            <p><a href="https://github.com/maxoralbay">GitHub</a></p>
+        </div>
+        <div class="col-md-8">
+            <div id="markdown-content" class="p-3 bg-light border"></div>
+        </div>
+    </div>
+</section>
+<!-- Portfolio Section -->
+<!-- Portfolio Section -->
+<!-- Portfolio Section -->
+<!-- Portfolio Section -->
+<section class="container mt-5">
+    <div class="row" id="portfolio-gallery">
+        <h2>Portfolio</h2>
+    </div>
+</section>
+
+<!-- Modal Template (to be cloned dynamically) -->
+<div class="modal fade" id="portfolioModal" tabindex="-1" aria-labelledby="portfolioModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="portfolioModalLabel">Project Title</h5>
+                <button type="button" class="btn-close" data-mdb-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div id="carouselExample" class="carousel slide" data-mdb-ride="carousel">
+                    <div class="carousel-inner" id="carousel-inner">
+                        <!-- Carousel items will be added dynamically here -->
+                    </div>
+                    <!-- Carousel Controls -->
+                    <button class="carousel-control-prev" type="button" data-mdb-target="#carouselExample" data-mdb-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-mdb-target="#carouselExample" data-mdb-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- MDBootstrap JavaScript -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.0.0/mdb.min.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        // Example of loading a markdown file dynamically
+        fetch('about.html')
+            .then(response => response.text())
+            .then(text => {
+                document.getElementById('markdown-content').innerHTML = text;
+            });
+    });
+    // Fetch portfolio items from JSON file
+    fetch('/assets/portfolio.json')
+        .then(response => response.json())
+        .then(data => {
+            const portfolioGallery = document.getElementById('portfolio-gallery');
+            data.forEach((project, index) => {
+                // Create Portfolio Item
+                const portfolioItem = document.createElement('div');
+                portfolioItem.classList.add('col-md-4', 'col-sm-4', 'mb-4', 'portfolio-item');
+
+                portfolioItem.innerHTML = `
+                <img src="${project.thumbs}" class="img-fluid mb-1" alt="Project ${index + 1}" data-mdb-toggle="modal" data-mdb-target="#portfolioModal${index}">
+                <h3 class="mt-2"><a href="${project.url}">${project.title}</a></h3>
+                <p class="mt-1">${project.desc}</p>
+            `;
+                portfolioGallery.appendChild(portfolioItem);
+
+                // Create Modal with Carousel
+                // const modalTemplate = document.getElementById('portfolioModal').cloneNode(true);
+                // modalTemplate.id = `portfolioModal${index}`;
+                // modalTemplate.querySelector('.modal-title').innerText = project.items.title;
+                // const carouselInner = modalTemplate.querySelector('.carousel-inner');
+                // carouselInner.innerHTML = '';
+
+                // project.items.forEach((item, imgIndex) => {
+                //     const carouselItem = document.createElement('div');
+                //     carouselItem.classList.add('carousel-item'); // Always add the base class
+                //
+                //     if (imgIndex === 0) {
+                //         carouselItem.classList.add('active'); // Only the first item should be active
+                //     }
+                //
+                //     carouselItem.innerHTML = `
+                //     <img src="${item.image}" class="d-block w-100" alt="${item.title}">
+                //     <div class="carousel-caption d-none d-md-block">
+                //         <h5><a href="${item.url}">${item.title}</a></h5>
+                //         <p>${item.desc}</p>
+                //     </div>
+                // `;
+                //     carouselInner.appendChild(carouselItem);
+                // });
+
+               // document.body.appendChild(modalTemplate);
+            });
+        })
+        .catch(error => console.error('Error fetching portfolio data:', error));
+</script>
+
+</body>
+</html>
